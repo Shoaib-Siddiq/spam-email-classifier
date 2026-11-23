@@ -72,7 +72,11 @@ jupyter notebook notebooks/01-eda-and-modeling.ipynb
 
 ## Limitations and next experiment
 
-The test corpus consists of SMS messages. Email performance has not been measured. A follow-up split should keep duplicate messages and recurring templates in the same group to test performance on unfamiliar wording.
+The test corpus consists of SMS messages. Email performance has not been measured. The grouped evaluation below tests sensitivity to repeated normalized messages.
+
+### Duplicate-grouped evaluation
+
+The 5,574 rows reduce to 5,071 distinct strings after the project’s text normalization. Across five folds, grouping rows with identical normalized text reduced spam F1 from 0.940 to 0.933. Both splits use the same TF-IDF and classifier settings. Similar templates with different normalized text can still cross folds. Run `python -m src.grouped_eval` from the repository root. [Results](reports/grouped_eval.json)
 
 ## 📚 References
 

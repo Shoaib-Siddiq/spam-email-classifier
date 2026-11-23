@@ -1,0 +1,14 @@
+{
+  "messages": 5574,
+  "distinct_normalized_messages": 5071,
+  "ordinary": {
+    "spam_precision": 0.9661016949152542,
+    "spam_recall": 0.9156626506024096,
+    "spam_f1": 0.9402061855670103
+  },
+  "grouped": {
+    "spam_precision": 0.9538461538461539,
+    "spam_recall": 0.9129852744310576,
+    "spam_f1": 0.93296853625171
+  }
+}

@@ -1,13 +1,13 @@
-# 📧 Spam Email / SMS Classifier
+# 📧 SMS Spam Classifier
 
 Classic NLP classification project: detect **spam SMS messages** using TF-IDF features and three
-classic classifiers, with a live interactive demo. Trained and evaluated on the
+classic classifiers, with a local Streamlit demo. Trained and evaluated on the
 [UCI SMS Spam Collection](https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection)
 (Almeida et al., 2011) — **5,574 real SMS messages** (13.4% spam).
 
 ---
 
-## 🚀 Live demo (Streamlit)
+## Run the Streamlit app locally
 
 ```bash
 pip install -r requirements.txt
@@ -70,16 +70,9 @@ jupyter notebook notebooks/01-eda-and-modeling.ipynb
 
 ---
 
-## 🔑 Key takeaways (interview talking points)
+## Limitations and next experiment
 
-1. **Text pipeline:** lowercasing → URL/number tokenization (`<URL>`, `<NUM>`) → punctuation stripping
-   → stop-word removal → TF-IDF with 1–2 word n-grams (`sublinear_tf`, `min_df=2`).
-2. **Imbalanced data:** 13.4% spam → accuracy alone is misleading; precision/recall/F1/AUC + stratified CV.
-3. **Model comparison done right:** identical features across models, 5-fold CV, best model auto-selected.
-4. **Production-ready:** the saved pipeline is a single `joblib` artifact — `predict()` and `predict_proba()`
-   work end-to-end on raw text.
-
----
+The test corpus consists of SMS messages. Email performance has not been measured. A follow-up split should keep duplicate messages and recurring templates in the same group to test performance on unfamiliar wording.
 
 ## 📚 References
 
